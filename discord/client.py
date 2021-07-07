@@ -187,6 +187,7 @@ class Client:
         self._listeners = {}
         self.shard_id = options.get('shard_id')
         self.shard_count = options.get('shard_count')
+        self.base_url = options.get('base_url')
 
         connector = options.pop('connector', None)
         proxy = options.pop('proxy', None)

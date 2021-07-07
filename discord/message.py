@@ -445,7 +445,7 @@ class MessageReference:
         .. versionadded:: 1.7
         """
         guild_id = self.guild_id if self.guild_id is not None else '@me'
-        return f'https://discord.com/channels/{guild_id}/{self.channel_id}/{self.message_id}'
+        return f'https:///channels/{guild_id}/{self.channel_id}/{self.message_id}'
 
     def __repr__(self) -> str:
         return f'<MessageReference message_id={self.message_id!r} channel_id={self.channel_id!r} guild_id={self.guild_id!r}>'

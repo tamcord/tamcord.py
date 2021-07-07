@@ -106,12 +106,11 @@ async def json_or_text(response: aiohttp.ClientResponse) -> Any:
 
 
 class Route:
-    BASE: ClassVar[str] = 'https://discord.com/api/v8'
-
-    def __init__(self, method: str, path: str, **parameters: Any) -> None:
+    def __init__(self, method: str, path: str, base: str, **parameters: Any) -> None:
+        self.base: str = base
         self.path: str = path
         self.method: str = method
-        url = self.BASE + self.path
+        url = f'{self.base}/api/v8' + self.path
         if parameters:
             url = url.format_map({k: _uriquote(v) if isinstance(v, str) else v for k, v in parameters.items()})
         self.url: str = url
@@ -166,9 +165,11 @@ class HTTPClient:
         proxy: Optional[str] = None,
         proxy_auth: Optional[aiohttp.BasicAuth] = None,
         loop: Optional[asyncio.AbstractEventLoop] = None,
+        base_url: Optional[str] = None,
         unsync_clock: bool = True
     ) -> None:
         self.loop: asyncio.AbstractEventLoop = asyncio.get_event_loop() if loop is None else loop
+        self.base_url: str = 'https://discord.com/' if base_url is None else base_url
         self.connector = connector
         self.__session: Optional[aiohttp.ClientSession] = None  # filled in static_login
         self._locks: weakref.WeakValueDictionary = weakref.WeakValueDictionary()
