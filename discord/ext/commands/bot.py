@@ -101,10 +101,6 @@ _default = _DefaultRepr()
 class BotBase(GroupMixin):
     def __init__(self, command_prefix, help_command=_default, description=None, opts=None, **options):
         super().__init__(**options)
-        if base is None:
-            self.base = 'discord.com'
-        else: 
-            self.base = base
         self.command_prefix = command_prefix
         self.extra_events = {}
         self.__cogs = {}
