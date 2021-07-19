@@ -110,7 +110,7 @@ class Route:
         self.base: str = base
         self.path: str = path
         self.method: str = method
-        url = f'{self.base}/api/v8' + self.path
+        url = '/api/v8' + self.path
         if parameters:
             url = url.format_map({k: _uriquote(v) if isinstance(v, str) else v for k, v in parameters.items()})
         self.url: str = url
@@ -215,7 +215,8 @@ class HTTPClient:
     ) -> Any:
         bucket = route.bucket
         method = route.method
-        url = route.url
+        proto_url = route.url
+        url = f'{self.base_url}/{proto_url}'
 
         lock = self._locks.get(bucket)
         if lock is None:
