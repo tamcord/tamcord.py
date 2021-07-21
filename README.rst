@@ -1,4 +1,4 @@
-discord.py
+discord.py - Decentralized 
 ==========
 
 .. image:: https://discord.com/api/guilds/336642139381301249/embed.png
@@ -11,7 +11,7 @@ discord.py
    :target: https://pypi.python.org/pypi/discord.py
    :alt: PyPI supported Python versions
 
-A modern, easy to use, feature-rich, and async ready API wrapper for Discord written in Python.
+A modern, easy to use, feature-rich, and async ready API wrapper for Discord written in Python. This build is experimental and contains support for other Discord implementations.
 
 Key Features
 -------------
