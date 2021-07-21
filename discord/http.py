@@ -106,10 +106,16 @@ async def json_or_text(response: aiohttp.ClientResponse) -> Union[Dict[str, Any]
 
     return text
 
-
+# New Route - Fosscord compat
+# New Route class handles URLs and base in a different way
+# while previously it had the "BASE_URL" hardcoded, this is
+# no longer the case, now it will return a "meta url", without any 
+# base, a great example of this would be the following url:
+#       /api/v8/endpoint/
+# instead of:
+#       https://discord.com/api/v8/endpoint
 class Route:
-    def __init__(self, method: str, path: str, base: str, **parameters: Any) -> None:
-        self.base: str = base
+    def __init__(self, method: str, path: str, **parameters: Any) -> None:
         self.path: str = path
         self.method: str = method
         url = '/api/v8' + self.path
