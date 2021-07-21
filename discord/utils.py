@@ -63,6 +63,8 @@ import warnings
 
 from .errors import InvalidArgument
 
+from dateutil import parser
+
 try:
     import orjson
 except ModuleNotFoundError:
@@ -227,7 +229,7 @@ def parse_time(timestamp: Optional[str]) -> Optional[datetime.datetime]:
 
 def parse_time(timestamp: Optional[str]) -> Optional[datetime.datetime]:
     if timestamp:
-        return datetime.datetime.fromisoformat(timestamp)
+        return parser.parse(timestamp)
     return None
 
 
