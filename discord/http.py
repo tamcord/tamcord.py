@@ -224,7 +224,7 @@ class HTTPClient:
         bucket = route.bucket
         method = route.method
         proto_url = route.url
-        url = f'{self.base_url}/{proto_url}'
+        url = f'{self.base_url}{proto_url}'
 
         lock = self._locks.get(bucket)
         if lock is None:
