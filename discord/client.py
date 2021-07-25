@@ -196,15 +196,15 @@ class Client:
         self,
         *,
         loop: Optional[asyncio.AbstractEventLoop] = None,
+        base_url: Optional[str] = None,
         **options: Any,
     ):
         self.ws: DiscordWebSocket = None  # type: ignore
         self.loop: asyncio.AbstractEventLoop = asyncio.get_event_loop() if loop is None else loop
+        self.base_url: str = 'https://discord.com/' if base_url is None else base_url
         self._listeners: Dict[str, List[Tuple[asyncio.Future, Callable[..., bool]]]] = {}
         self.shard_id: Optional[int] = options.get('shard_id')
         self.shard_count: Optional[int] = options.get('shard_count')
-        self.base_url = options.get('base_url')
-        self.base_url = options.get('base_url')
 
         connector: Optional[aiohttp.BaseConnector] = options.pop('connector', None)
         proxy: Optional[str] = options.pop('proxy', None)
