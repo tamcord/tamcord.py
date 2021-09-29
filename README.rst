@@ -1,7 +1,7 @@
 discord.py - Decentralized 
 ==========
 
-.. image:: https://discord.com/api/guilds/336642139381301249/embed.png
+.. image:: https://discord.com/api/guilds/889943608541720686/embed.png
    :target: https://discord.gg/BBuHyBQwe3
    :alt: Discord server invite
 .. image:: https://img.shields.io/pypi/v/discord.py.svg
