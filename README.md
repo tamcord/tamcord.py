@@ -104,4 +104,4 @@ You can find more examples in the examples directory.
 
 - [Discord.py Documentation](https://discordpy.readthedocs.io/en/latest/index.html)
 - [Official Discord.py Server](https://discord.gg/r3sSKJJ)
-- [Discord API](https://discord.gg/discord-api>)
+- [Discord API](https://discord.gg/discord-api)
