@@ -30,7 +30,7 @@ if version.endswith(('a', 'b', 'rc')):
         pass
 
 readme = ''
-with open('README.rst') as f:
+with open('README.md') as f:
     readme = f.read()
 
 extras_require = {
@@ -54,19 +54,19 @@ packages = [
     'discord.ext.tasks',
 ]
 
-setup(name='discord.py',
-      author='Rapptz',
-      url='https://github.com/Rapptz/discord.py',
+setup(name='fosscord.py',
+      author='Fosscord Authors',
+      url='https://github.com/fosscord/fosscord.py',
       project_urls={
         "Documentation": "https://discordpy.readthedocs.io/en/latest/",
-        "Issue tracker": "https://github.com/Rapptz/discord.py/issues",
+        "Issue tracker": "https://github.com/fosscord/fosscord.py/issues",
       },
       version=version,
       packages=packages,
       license='MIT',
-      description='A Python wrapper for the Discord API',
+      description='A Python wrapper for the Fosscord API',
       long_description=readme,
-      long_description_content_type="text/x-rst",
+      long_description_content_type="text/markdown",
       include_package_data=True,
       install_requires=requirements,
       extras_require=extras_require,
